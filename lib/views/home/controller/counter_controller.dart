@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class CounterController extends ChangeNotifier {
-  //uncomment to user as a singleton
+  //uncomment to use as a singleton
   // CounterController._();
   // static CounterController instance = CounterController._();
 
