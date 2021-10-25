@@ -1,16 +1,49 @@
 # vanilla
 
-A new Flutter project.
+Vanilla state management in Flutter with no third party dependency and 
+clean separation of concerns
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+To get started, clone this
 
-A few resources to get you started if this is your first Flutter project:
+```git
+git clone git@github.com:Crazelu/vanilla-flutter.git
+```
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+Or
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+```git
+git clone https://github.com/Crazelu/vanilla-flutter.git
+```
+
+Have Fun!
+
+## ReactiveWidget
+
+```dart
+import 'package:flutter/material.dart';
+
+class ReactiveWidget extends AnimatedWidget {
+  const ReactiveWidget({
+    Key? key,
+    required this.controller,
+    required this.builder,
+  }) : super(
+          key: key,
+          listenable: controller,
+        );
+
+  ///A controller that the UI listens to for changes.
+  final Listenable controller;
+
+  /// Called every time the controller notifies the UI
+  /// to rebuild.
+  final Widget Function(BuildContext) builder;
+
+  @override
+  Widget build(BuildContext context) {
+    return builder(context);
+  }
+}
+```
